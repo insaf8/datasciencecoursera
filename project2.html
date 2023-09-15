@@ -116,44 +116,6 @@ $(document).ready(function () {
 <div class="fluid-row" id="header">
 
 
-
-<h1 class="title toc-ignore">Week 4 Assignment: Exploring Fine Particulate Matter Pollution in the US</h1>
-
-</div>
-
-
-<div id="instructions" class="section level2">
-<h2>Instructions</h2>
-<p>Fine particulate matter (PM2.5) is an ambient air pollutant for which there is strong evidence that it is harmful to human health. In the United States, the Environmental Protection Agency (EPA) is tasked with setting national ambient air quality standards for fine PM and for tracking the emissions of this pollutant into the atmosphere. Approximatly every 3 years, the EPA releases its database on emissions of PM2.5. This database is known as the National Emissions Inventory (NEI). You can read more information about the NEI at the <a href="http://www.epa.gov/ttn/chief/eiinformation.html">EPA National Emissions Inventory web site</a>.</p>
-<p>For each year and for each type of PM source, the NEI records how many tons of PM2.5 were emitted from that source over the course of the entire year. The data that you will use for this assignment are for 1999, 2002, 2005, and 2008.</p>
-<p>The overall goal of this assignment is to explore the National Emissions Inventory database and see what it say about fine particulate matter pollution in the United states over the 10-year period 1999–2008. You may use any R package you want to support your analysis.</p>
-</div>
-<div id="data" class="section level2">
-<h2>Data</h2>
-<p>The data for the project can be downloaded from <a href="https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip">here</a></p>
-<p>The zip file contains two files: 1. PM2.5 Emissions Data (<code>SUmmarySCC_PM25.rds</code>): This file contains a data frame with all of the PM2.5 emissions data for 1999, 2002, 2005, and 2008. For each year, the table contains number of tons of PM2.5 emitted from a specific type of source for the entire year. - fips: A five-digit number (represented as a string) indicating the U.S. county - SCC: The name of the source as indicated by a digit string (see source code classification table) - Pollutant: A string indicating the pollutant - Emissions: Amount of PM2.5 emitted, in tons - type: The type of source (point, non-point, on-road, or non-road) - year: The year of emissions recorded</p>
-<ol start="2" style="list-style-type: decimal">
-<li><p>Source Classification Code Table (<code>Source_Classification_Code.rds</code>): This table provides a mapping from the SCC digit strings in the Emissions table to the actual name of the PM2.5 source. The sources are categorized in a few different ways from more general to more specific and you may choose to explore whatever categories you think are most useful. For example, source “10100101” is known as “Ext Comb /Electric Gen /Anthracite Coal /Pulverized Coal”.</p>
-<p>You can read each of the two files using the <code>readRDS()</code> function in R.</p></li>
-</ol>
-</div>
-<div id="review-criteria" class="section level2">
-<h2>Review criteria</h2>
-<p>You must address the following questions and tasks in your exploratory analysis. For each question/task you will need to make a single plot. Unless specified, you can use any plotting system in R to make your plot.</p>
-<ol style="list-style-type: decimal">
-<li>Have total emissions from PM2.5 decreased in the United States from 1999 to 2008? Using the base plotting system, make a plot showing the total PM2.5 emission from all sources for each of the years 1999, 2002, 2005, and 2008.</li>
-<li>Have total emissions from PM2.5 decreased in the <strong>Baltimore City</strong>, Maryland (<code>fips == &quot;24510&quot;</code>) from 1999 to 2008? Use the <strong>base</strong> plotting system to make a plot answering this question.</li>
-<li>Of the four types of sources indicated by the <code>type</code> (point, nonpoint, onroad, nonroad) variable, which of these four sources have seen decreases in emissions from 1999–2008 for <strong>Baltimore City</strong>? Which have seen increases in emissions from 1999–2008? Use the <strong>ggplot2</strong> plotting system to make a plot answer this question.</li>
-<li>Across the United States, how have emissions from coal combustion-related sources changed from 1999–2008?</li>
-<li>How have emissions from motor vehicle sources changed from 1999–2008 in <strong>Baltimore City</strong>?</li>
-<li>Compare emissions from motor vehicle sources in Baltimore City with emissions from motor vehicle sources in <strong>Los Angeles County</strong>, California (<code>fips == &quot;06037&quot;</code>). Which city has seen greater changes over time in motor vehicle emissions?</li>
-</ol>
-</div>
-<div id="making-and-submitting-plots" class="section level2">
-<h2>Making and submitting plots</h2>
-<p>For each plot you should - Construct the plot and save it to a <strong>PNG file</strong>. - Create a separate R code file (<code>plot1.R</code>, <code>plot2.R</code>, etc.) that constructs the corresponding plot, i.e. code in plot1.R constructs the plot1.png plot. Your code file should include code for reading the data so that the plot can be fully reproduced. You must also include the code that creates the PNG file. Only include the code for a single plot - Upload the PNG file on the Assignment submission page - Copy and paste the R code from the corresponding R file into the text box at the appropriate point in the peer assessment.</p>
-</div>
-<div id="basic-setup" class="section level2">
 <h2>Basic setup</h2>
 <pre class="r"><code>if (!file.exists('data.zip')) {
   download.file(url = 'https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip',
