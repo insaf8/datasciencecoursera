@@ -1,10 +1,4 @@
----
-title: "My Leaflet Map Web Page"
-date: "2023-09-20"
-output: html_document
----
-
-```{r setup, include=FALSE}
+```{r leaflet-map, echo=FALSE}
 # Load necessary libraries
 library(leaflet)
 
@@ -16,4 +10,3 @@ leaflet() %>%
     lat = 40.748817,
     popup = "New York City"
   )
-knitr::opts_chunk$set(echo = FALSE)
