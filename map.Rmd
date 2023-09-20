@@ -1,0 +1,13 @@
+knitr::opts_chunk$set(echo = FALSE)
+
+# Load necessary libraries
+library(leaflet)
+
+# Create a Leaflet map
+leaflet() %>%
+  addTiles() %>%
+  addMarkers(
+    lng = -73.985130,
+    lat = 40.748817,
+    popup = "New York City"
+  )
