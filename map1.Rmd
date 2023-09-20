@@ -1,3 +1,10 @@
+---
+title: "My Leaflet Map Web Page"
+date: "2023-09-20"
+output: html_document
+---
+
+
 ```{r leaflet-map, echo=FALSE}
 # Load necessary libraries
 library(leaflet)
